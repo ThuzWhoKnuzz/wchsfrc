@@ -378,7 +378,8 @@ if (timeline) {
     { selector: '.officer', direction: 'up' },
     { selector: '.support-inner', direction: 'up' },
     { selector: '.contact-inner', direction: 'up' },
-    { selector: '.section-header', direction: 'up' }
+    { selector: '.section-header', direction: 'up' },
+  { selector: '.members-card', direction: 'up' }
   ];
 
   // Attach .reveal + data-reveal to elements we want animated
