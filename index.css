@@ -1,0 +1,2071 @@
+/* ========== BASE ========== */
+:root {
+  --bg-page: #f3f0eb;
+  --bg-card: #ffffff;
+  --bg-soft: #f7f4ef;
+  --text-main: #171717;
+  --text-muted: #6b7280;
+  --accent: #111827;
+  --accent-soft: #e5e7eb;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+
+/* ========= DARK THEME OVERRIDES – UPDATED FOR MORE POP ========= */
+
+
+/* Smooth transitions – keep this if you don't already have it */
+body,
+.navbar,
+.mission,
+.mission-detail,
+.subteam-card,
+.event-card,
+.support-inner,
+.contact-inner,
+.contact-form,
+.project-tile,
+.project-expanded,
+.officer-popup {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* Dark theme variables: navy + cyan accent */
+body.theme-dark {
+  --bg-page: #020617;          /* page background */
+  --bg-card: #020617;          /* cards / surfaces */
+  --bg-soft: #020617;          /* softer surfaces */
+  --text-main: #e5e7eb;        /* main text */
+  --text-muted: #a5b4fc;       /* muted text with slight indigo */
+  --accent: #38bdf8;           /* cyan accent (buttons, highlights) */
+  --accent-soft: #0f172a;      /* subtle outlines / chips */
+}
+
+
+/* Overall page background */
+body.theme-dark {
+  background:
+    radial-gradient(circle at top left, #0f172a 0, #020617 50%, #000 100%);
+  color: var(--text-main);
+}
+
+
+/* Navbar */
+body.theme-dark .navbar {
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom-color: rgba(56, 189, 248, 0.45);
+}
+
+
+body.theme-dark .logo-mark {
+  background: #0ea5e9;
+  color: #020617;
+}
+
+
+/* Links */
+body.theme-dark .nav-links a {
+  color: var(--text-muted);
+}
+
+
+body.theme-dark .nav-links a::after {
+  background: var(--accent);
+}
+
+
+body.theme-dark .nav-links a:hover {
+  color: #e5e7eb;
+}
+
+
+/* Sections that were light before */
+body.theme-dark .mission-section,
+body.theme-dark .mission-detail,
+body.theme-dark .projects-section,
+body.theme-dark .officer-section,
+body.theme-dark .support-section,
+body.theme-dark .contact-section {
+  background: transparent; /* let the main gradient show through */
+}
+
+
+/* Cards / panels */
+body.theme-dark .mission,
+body.theme-dark .subteam-card,
+body.theme-dark .event-card,
+body.theme-dark .support-inner,
+body.theme-dark .contact-inner,
+body.theme-dark .contact-form,
+body.theme-dark .project-tile,
+body.theme-dark .project-expanded,
+body.theme-dark .officer-popup {
+  background: radial-gradient(circle at top left, #111827, #020617 70%);
+  border-color: #1f2937;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+body.theme-dark .subteam-card,
+body.theme-dark .event-card,
+body.theme-dark .contact-form {
+  box-shadow:
+    0 0 0 transparent,
+    0 10px 28px rgba(56, 189, 248, 0.3);
+}
+
+/* Hero */
+body.theme-dark .hero-title,
+body.theme-dark .section-title {
+  color: #f9fafb;
+}
+
+
+body.theme-dark .hero-subtitle,
+body.theme-dark .section-description,
+body.theme-dark .timeline-desc,
+body.theme-dark .event-note {
+  color: var(--text-muted);
+}
+
+
+/* Buttons */
+body.theme-dark .btn.primary {
+  background: var(--accent);
+  color: #020617;
+  border-color: transparent;
+}
+
+
+body.theme-dark .btn.primary:hover {
+  background: #0ea5e9;
+}
+
+
+body.theme-dark .btn.ghost {
+  background: transparent;
+  color: #e5e7eb;
+  border-color: #334155;
+}
+
+
+body.theme-dark .btn.ghost:hover {
+  background: #0f172a;
+}
+
+
+/* Hero tag pill */
+body.theme-dark .hero-tag {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+}
+
+
+body.theme-dark .hero-tag .dot {
+  background: #22c55e;
+}
+
+
+/* Projects tiles (default state) */
+body.theme-dark .project-tile {
+  background: #020617;
+}
+
+
+/* Expanded project panel */
+body.theme-dark .project-expanded-info h3 {
+  color: #e5e7eb;
+}
+
+
+body.theme-dark .project-expanded-info p {
+  color: #cbd5f5;
+}
+
+
+body.theme-dark .project-expanded-members span {
+  border-color: #1d4ed8;
+  color: #e5e7eb;
+}
+
+
+/* Officer popup */
+body.theme-dark .officer-popup-name {
+  color: #f9fafb;
+}
+
+
+body.theme-dark .officer-popup-role {
+  color: #a5b4fc;
+}
+
+
+/* Support block */
+body.theme-dark .support-inner {
+  background: radial-gradient(circle at top left, #0b1120, #020617 70%);
+}
+
+
+/* Contact form */
+body.theme-dark .contact-form {
+  background: #020617;
+}
+
+
+/* Theme toggle colors in dark mode */
+body.theme-dark .theme-toggle {
+  background: #020617;
+  border-color: #1f2937;
+}
+
+
+body.theme-dark .theme-toggle .theme-icon {
+  color: #e5e7eb;
+}
+
+
+/* ========= DARK MODE TEXT VISIBILITY FIX ========= */
+
+
+body.theme-dark
+.mission-name,
+body.theme-dark
+.explore-btn,
+body.theme-dark
+.event-value,
+body.theme-dark
+.stat-number,
+body.theme-dark
+.logo-text span:first-child,
+body.theme-dark
+.contact-label,
+body.theme-dark
+.form-row label {
+  color: #f8fafc !important;
+}
+
+
+/* Optional soft glow for emphasis */
+body.theme-dark
+.stat-number,
+body.theme-dark
+.mission-name {
+  text-shadow: 0 0 6px rgba(56, 189, 248, 0.3);
+}
+
+
+/* Muted secondary labels */
+body.theme-dark
+.logo-text span:last-child,
+body.theme-dark
+.section-description,
+body.theme-dark
+.mission-about,
+body.theme-dark
+.event-note {
+  color: #c7d2fe !important;
+}
+
+
+/* Explore buttons clarity */
+body.theme-dark .explore-btn {
+  border-color: #38bdf8 !important;
+}
+
+
+/* Contact form fields */
+body.theme-dark input,
+body.theme-dark textarea {
+  background: #020617;
+  color: #f8fafc;
+  border-color: #38bdf8;
+}
+
+
+body.theme-dark input::placeholder,
+body.theme-dark textarea::placeholder {
+  color: #94a3b8;
+}
+
+
+body.theme-dark .contact-row a {
+  color: #38bdf8 !important;   /* bright accent blue */
+}
+
+
+body.theme-dark .contact-row a:hover {
+  color: #7dd3fc !important;
+  text-decoration: underline;
+}
+
+
+/* ===== DARK MODE FIX – CONTACT ICON VISIBILITY ===== */
+
+
+body.theme-dark .contact-row i {
+  color: #38bdf8 !important;
+}
+
+
+body.theme-dark .contact-row i:hover {
+  color: #7dd3fc !important;
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+body {
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #f9f5ee, #ece7de);
+  color: var(--text-main);
+}
+
+
+/* ========== LAYOUT WRAPPER ========== */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ========== NAVBAR ========== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(16px);
+  background: rgba(243, 240, 235, 0.9);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 5vw;
+}
+
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+
+/* Theme toggle button */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+
+.theme-toggle .theme-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #111827;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+
+/* default: sun visible, moon below */
+.theme-icon-sun {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.theme-icon-moon {
+  opacity: 0;
+  transform: translateY(12px) rotate(-30deg);
+}
+
+
+/* dark mode: moon rises, sun slides up */
+body.theme-dark .theme-toggle {
+  background: #020617;
+  border-color: #0f172a;
+}
+
+
+body.theme-dark .theme-toggle .theme-icon {
+  color: #e5e7eb;
+}
+
+
+body.theme-dark .theme-icon-sun {
+  opacity: 0;
+  transform: translateY(-12px) rotate(30deg);
+}
+
+
+body.theme-dark .theme-icon-moon {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
+
+
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: #111827;
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+}
+
+
+.logo-text span:first-child {
+  font-weight: 600;
+  color: #111827;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  position: relative;
+  padding: 0.2rem 0;
+}
+
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #111827;
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+
+.nav-links a:hover {
+  color: #111827;
+}
+
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* Mobile nav button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  border: none;
+  background: transparent;
+  padding: 4px;
+  cursor: pointer;
+}
+
+
+.nav-toggle span {
+  width: 20px;
+  height: 2px;
+  background: #111827;
+  border-radius: 999px;
+}
+
+
+/* ========== MAIN ========== */
+.main {
+  flex: 1;
+}
+
+
+/* ========== HERO ========== */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 4rem;
+  padding: 4.5rem 5vw 3.5rem;
+  align-items: center;
+}
+
+
+.hero-left {
+  max-width: 640px;
+}
+
+
+.eyebrow {
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+
+.hero-title {
+  font-family: "Playfair Display", "DM Sans", serif;
+  font-size: clamp(2.3rem, 3.4vw, 3.1rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: #111827;
+}
+
+
+.hero-subtitle {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 30rem;
+  margin-bottom: 1.8rem;
+}
+
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 2.2rem;
+}
+
+
+.btn {
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.92rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+
+.btn.primary {
+  background: #111827;
+  color: white;
+}
+
+
+.btn.primary:hover {
+  background: #020617;
+}
+
+
+.btn.ghost {
+  background: transparent;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+
+.btn.ghost:hover {
+  background: #e5e7eb;
+}
+
+
+#download-btn {
+  border: 1px solid #d1d5db;
+  color: #d1d5db;
+  transition: 0.25s;
+}
+
+
+#download-btn:hover {
+  background: #d1d5db;
+  color: #111827;
+}
+
+#download-btn:hover a {
+  color: #111827;
+}
+
+#download-btn a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+#contact-btn {
+ background: #d1d5db;
+  color: #111827;
+  transition: 0.25s;
+}
+
+
+#contact-btn:hover {
+  opacity: 0.85;
+}
+
+
+/* Hero stats */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+}
+
+
+.stat {
+  min-width: 80px;
+}
+
+
+.stat-number {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.9rem;
+}
+
+
+.hero-image-frame {
+  width: 100%;
+  max-width: 430px;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #e5e7eb;
+  box-shadow: var(--shadow-soft);
+}
+
+
+.hero-image-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: #111827;
+  color: white;
+  font-size: 0.78rem;
+}
+
+
+.hero-tag .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #22c55e;
+}
+
+
+/* ========== SECTION GENERIC ========== */
+.section-header {
+  text-align: left;
+  margin-bottom: 2.2rem;
+}
+
+
+.section-header .eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.7rem, 2.2vw, 2.1rem);
+  margin: 0 0 0.7rem;
+  color: #111827;
+}
+
+
+.section-description {
+  max-width: 32rem;
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+
+/* ========== MISSION SECTION ========== */
+.mission-section {
+  padding: 3.5rem 5vw 3.5rem;
+}
+
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+
+.mission {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 1.8rem 1.5rem;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.mission-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+
+.mission-about {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+
+.explore-btn {
+  font-size: 0.87rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #111827;
+  cursor: pointer;
+}
+
+
+/* ========== MISSION DETAIL SECTIONS ========== */
+.mission-detail {
+  padding: 4rem 5vw 4.5rem;
+  background: #f7f4ef;
+  border-top: 1px solid rgba(148,163,184,0.25);
+}
+
+
+.mission-detail:nth-of-type(even) {
+  background: #f3f0eb;
+}
+
+
+.mission-detail-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-inline: auto;
+  padding-inline: 5vw;
+}
+
+
+.mission-detail-text {
+  max-width: 900px;
+}
+
+
+.mission-bullets {
+  margin: 1.8rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+
+.mission-bullets li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+
+.mission-bullets li span {
+  font-size: 1.2rem;
+}
+
+
+.mission-detail-media {
+  margin-top: 2.2rem;
+}
+
+
+.mission-detail-photo {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+
+.mission-detail-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+.mission-detail-caption {
+  margin-top: 0.7rem;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+
+/* ========== PROCESS TIMELINE ========== */
+.process-timeline {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+
+.timeline-step {
+  padding: 1.1rem 1.2rem 1rem;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(15,23,42,0.06);
+}
+
+
+.timeline-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.timeline-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+
+.timeline-percent {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+
+.timeline-bar {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+  margin-bottom: 0.55rem;
+}
+
+
+.timeline-bar-inner {
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #111827, #374151);
+  transition: width 1.2s ease-out;
+}
+
+
+.timeline-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+
+/* ========== SUBTEAM GRID ========== */
+.subteam-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+
+.subteam-card {
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 1.4rem 1.3rem 1.1rem;
+  box-shadow: 0 12px 28px rgba(15,23,42,0.06);
+}
+
+
+.subteam-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+
+.subteam-card p {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+
+.subteam-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.86rem;
+  color: #4b5563;
+}
+
+
+/* ========== COMPETITION EVENT CARD ========== */
+.event-card {
+  margin-top: 2rem;
+  border-radius: 22px;
+  background: #ffffff;
+  padding: 1.8rem 1.6rem 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+}
+
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+
+.event-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+
+.event-tag {
+  font-size: 0.78rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #22c55e;
+  color: #15803d;
+  background: #ecfdf3;
+}
+
+
+.event-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.6rem;
+  margin-bottom: 1.1rem;
+}
+
+
+.event-label {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  margin-bottom: 0.1rem;
+}
+
+
+.event-value {
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+
+.event-opponents {
+  margin-bottom: 0.9rem;
+}
+
+
+.opponent-chips {
+  margin-top: 0.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+
+.opponent-chips span {
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.78rem;
+}
+
+
+.event-note {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+
+/* ========== RESPONSIVE FOR MISSION DETAIL ========== */
+@media (max-width: 900px) {
+  .subteam-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+@media (max-width: 600px) {
+  .subteam-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+
+  .mission-detail {
+    padding-inline: 1.2rem;
+  }
+
+
+  .event-info-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+
+
+/* ========== OFFICERS SECTION ========== */
+.officer-section {
+  padding: 3.5rem 5vw 4.5rem;
+}
+
+
+.officers {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+
+.officer {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid #e5e7eb;
+  background: #e5e7eb;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.officer .picture {
+  width: 100%;
+  height: 100%;
+}
+
+
+.officer .picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: inherit;
+}
+
+
+.officer-cover {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(to top, rgba(15,23,42,0.85), transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.9rem;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+
+.officer:hover .officer-cover {
+  opacity: 1;
+}
+
+
+
+
+/* Officer popup */
+/* needs lots of fixes */
+.officer-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;                     /* center horizontally in viewport */
+  transform: translate(-50%, -50%); /* center both axes */
+  background: #111827;
+  color: white;
+  border-radius: 18px;
+  padding: 1.7rem 1.7rem 1.5rem;
+  width: 420px;
+  max-width: 92vw;
+  box-shadow: var(--shadow-soft);
+  /*  */
+  opacity: 0;
+  pointer-events: none;
+  /*  */
+  z-index: 40;
+  transition: 0.4s;
+}
+
+
+.officer-popup.sb-closed {
+  left: calc(0px + (100vw - 0px) / 2); /* if you later tie this to a “collapsed” state */
+}
+
+
+.officer-popup-top {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+
+.officer-popup-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid rgba(248, 250, 252, 0.8);
+}
+
+
+.officer-popup-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+
+.officer-popup-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+
+.officer-popup-role {
+  font-size: 0.88rem;
+  color: #e5e7eb;
+}
+
+
+.officer-popup-bottom {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.9rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+/* ========== SUPPORT CTA ========== */
+.support-section {
+  padding: 3.5rem 5vw 4rem;
+}
+
+
+.support-inner {
+  border-radius: var(--radius-lg);
+  background: #111827;
+  color: white;
+  padding: 2.3rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+
+.support-inner .section-title {
+  color: white;
+}
+
+
+.support-inner .section-description {
+  color: #e5e7eb;
+}
+
+
+.support-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: flex-end;
+}
+
+
+/* ... keep ALL your existing CSS from before ... */
+
+
+/* ========== SUPPORT CTA ========== */
+.support-section {
+  padding: 3.5rem 5vw 4rem;
+}
+
+
+.support-inner {
+  border-radius: var(--radius-lg);
+  background: #111827;
+  color: white;
+  padding: 2.3rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+
+.support-inner .section-title {
+  color: white;
+}
+
+
+.support-inner .section-description {
+  color: #e5e7eb;
+}
+
+
+.support-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: flex-end;
+}
+
+
+/* ========== CONTACT SECTION ========== */
+.contact-section {
+  padding: 3.5rem 5vw 4.5rem;
+}
+
+
+.contact-inner {
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  padding: 2.3rem 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2.8rem;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+
+.contact-left .section-title {
+  margin-bottom: 0.4rem;
+}
+
+
+.contact-details {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.contact-row {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+
+.contact-row i {
+  font-size: 1rem;
+  color: #111827;
+  margin-top: 0.1rem;
+}
+
+
+.contact-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+
+.contact-row a {
+  font-size: 0.9rem;
+  color: #111827;
+  text-decoration: none;
+}
+
+
+.contact-row a:hover {
+  text-decoration: underline;
+}
+
+
+/* Form */
+.contact-form {
+  background: var(--bg-soft);
+  border-radius: var(--radius-md);
+  padding: 1.8rem 1.8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+
+.form-row label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+
+.form-row input,
+.form-row textarea {
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  padding: 0.6rem 0.7rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  background: white;
+}
+
+
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: #111827;
+}
+
+
+.form-submit {
+  margin-top: 0.8rem;
+  width: 100%;
+  justify-content: center;
+}
+
+
+.form-note {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+
+.form-success{
+  display: none;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #22c55e; /* green */
+}
+
+
+
+
+/* ========== FOOTER (already defined) ========== */
+/* ... existing footer styles ... */
+
+
+/* ========================== */
+/*         PROJECTS GRID      */
+/* ========================== */
+
+.projects-section {
+  padding: 3.5rem 5vw 4rem;
+}
+
+/* default (mobile/tablet): simple 2-column grid */
+.projects-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 120px;
+  gap: 12px;
+  transition:
+    grid-template-columns 0.35s ease,
+    grid-auto-rows 0.35s ease;
+}
+
+/* base tile (black squares / image frames) */
+.project-tile {
+  background: #020617;
+  border-radius: 14px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease,
+    max-height 0.35s ease,
+    padding 0.35s ease;
+}
+
+/* thumbnail wrapper inside each tile */
+.project-tile-thumb {
+  width: 100%;
+  height: 100%;
+}
+
+.project-tile-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* subtle dark overlay so text would be readable if you add it later */
+.project-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(15,23,42,0.1), rgba(15,23,42,0.4));
+  pointer-events: none;
+}
+
+.project-tile:hover {
+  transform: scale(1.03);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* expanded-mode grid – keep 7×6, active tile spans all */
+.projects-grid.expanded {
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  height: 520px;
+}
+
+/* other tiles disappear when one is active */
+.project-tile.collapsed {
+  opacity: 0;
+  transform: scale(0.8);
+  max-height: 0;
+  padding: 0;
+  pointer-events: none;
+  display: none;       /* NEW – removes them from the grid entirely */
+}
+
+
+/* active tile fills the grid (second image) */
+.project-tile.active {
+  background: #020617;
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.45);
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.project-tile.active:hover {
+  transform: none;
+}
+
+/* expanded content inside the active tile */
+.project-expanded {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.9rem;
+  height: 100%;
+  align-items: stretch;           /* NEW: stretch both columns to full tile height */
+  color: #f9fafb;
+}
+
+/* expanded image – cap height like you asked (~250px) */
+.project-expanded-img {
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;      /* NEW: fill the whole 6-row tile vertically */
+  min-height: 0;     /* NEW: allow it to shrink on small screens if needed */
+}
+
+/* text side */
+.project-expanded-info h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.55rem;
+  margin: 0 0 0.7rem;
+}
+
+.project-expanded-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cbd5f5;
+}
+
+.project-expanded-members {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.project-expanded-members span {
+  border-radius: 999px;
+  border: 1px solid #475569;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.project-collapse-btn {
+  margin-top: 1.3rem;
+  border-radius: 999px;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.84rem;
+  border: 1px solid #e5e7eb;
+  background: transparent;
+  color: #f9fafb;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.project-collapse-btn:hover {
+  background: #e5e7eb;
+  color: #020617;
+}
+
+/* ========== DESKTOP 7×6 LAYOUT ========== */
+/* matches your first drawing */
+@media (min-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    height: 520px;              /* overall grid height – shrink if you want it smaller */
+    grid-auto-rows: unset;
+  }
+
+  .project-tile {
+    min-height: 0;
+  }
+
+  .project-tile-thumb {
+    height: 100%;
+  }
+
+  .project-tile-thumb img {
+    height: 100%;
+  }
+
+  .projects-grid.expanded {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    height: 520px;
+  }
+
+  /* Tile 1 – big cyan block on the left (cols 1–2, rows 1–4) */
+  .projects-grid .project-tile:nth-child(1) {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 4;
+  }
+
+  /* Tile 2 – long lime block on top right (cols 3–7, rows 1–2) */
+  .projects-grid .project-tile:nth-child(2) {
+    grid-column: 3 / span 5;
+    grid-row: 1 / span 2;
+  }
+
+  /* Tile 3 – tall blue middle (cols 3–4, rows 3–5) */
+  .projects-grid .project-tile:nth-child(3) {
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 3;
+  }
+
+  /* Tile 4 – tall black on the right (cols 5–7, rows 3–5) */
+  .projects-grid .project-tile:nth-child(4) {
+    grid-column: 5 / span 3;
+    grid-row: 3 / span 3;
+  }
+
+  /* Tile 5 – small block under tall left (cols 1–2, row 5) */
+  .projects-grid .project-tile:nth-child(5) {
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 1;
+  }
+
+  /* Tile 6 – long bottom bar (cols 2–6, row 6) */
+  .projects-grid .project-tile:nth-child(6) {
+    grid-column: 2 / span 5;
+    grid-row: 6 / span 1;
+  }
+}
+
+/* ======= MOBILE / TABLET FALLBACKS ======= */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 140px;
+  }
+
+  .project-expanded {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-expanded-img {
+    max-height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid,
+  .projects-grid.expanded {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    height: auto;
+  }
+
+  .project-expanded {
+    padding: 1.5rem 1.3rem;
+  }
+}
+
+
+
+
+/* ====== RESPONSIVE UPDATES FOR CONTACT ====== */
+@media (max-width: 900px) {
+  .contact-inner {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 2rem 1.7rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .support-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  .support-right {
+    justify-content: flex-start;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding-inline: 1.2rem;
+  }
+
+
+  .contact-inner {
+    padding: 1.8rem 1.4rem;
+  }
+
+
+  .nav-right {
+  gap: 0.85rem;
+}
+
+
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+
+}
+
+
+
+
+/* ========== FOOTER ========== */
+.footer {
+  padding: 1.5rem 5vw 1.7rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+
+/* ========== RESPONSIVE ========== */
+
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+
+  .hero-right {
+    align-items: flex-start;
+  }
+
+
+  .officers {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+
+  .officer-popup {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+@media (max-width: 900px) {
+  .mission-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  .support-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  .support-right {
+    justify-content: flex-start;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    padding-inline: 5vw;
+  }
+
+
+  .nav-right {
+  gap: 0.85rem;
+}
+
+
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+
+
+
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    right: 5vw;
+    background: #f9f5ee;
+    border-radius: 16px;
+    padding: 0.8rem 1.1rem;
+    box-shadow: var(--shadow-soft);
+    flex-direction: column;
+    gap: 0.75rem;
+    display: none;
+  }
+
+
+  .nav-links.open {
+    display: flex;
+  }
+
+
+  .nav-toggle {
+    display: flex;
+    color: #d1d5db;
+    font-size: 1.4rem;
+    border-radius: 1000px;
+    border: 3px solid #d1d5db;
+  }
+
+
+  .hero {
+    padding-top: 3.2rem;
+  }
+
+
+  .officers {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+
+  .support-inner {
+    padding: 1.9rem 1.7rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .mission-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+
+  .officers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  .hero-stats {
+    gap: 1.2rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .hero {
+    padding-inline: 1.2rem;
+  }
+
+
+  .mission-section,
+  .officer-section,
+  .support-section {
+    padding-inline: 1.2rem;
+  }
+
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+
+/* aniamtions */
+
+
+/* ========== SCROLL REVEAL ANIMATIONS ========== */
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+
+/* different directions (optional variety) */
+.reveal[data-reveal="left"] {
+  transform: translateX(-24px);
+}
+
+
+.reveal[data-reveal="right"] {
+  transform: translateX(24px);
+}
+
+
+.reveal[data-reveal="up"] {
+  transform: translateY(24px);
+}
+
+
+.reveal[data-reveal="down"] {
+  transform: translateY(-24px);
+}
+
+
+/* when visible in viewport */
+.reveal.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+
+
+
+/* ========= DARK MODE SHADOW ENHANCEMENTS ========= */
+body.theme-dark {
+
+  --shadow-soft:
+    0 10px 40px rgba(59, 130, 246, 0.12),
+    0 0 18px rgba(56, 189, 248, 0.15);
+}
+
+
+/* Cards & blocks */
+body.theme-dark .mission,
+body.theme-dark .hero-image-frame,
+body.theme-dark .contact-inner,
+body.theme-dark .support-inner,
+body.theme-dark .project-tile,
+body.theme-dark .officer,
+body.theme-dark .project-expanded,
+body.theme-dark .officer-popup {
+  box-shadow:
+    0 14px 45px rgba(56, 189, 248, 0.18),
+    0 0 16px rgba(56, 189, 248, 0.15) !important;
+}
+
+
+/* Navbar + sticky elements */
+body.theme-dark .navbar {
+  box-shadow:
+    0 10px 32px rgba(56, 189, 248, 0.12);
+}
+
+
+/* Buttons pop */
+body.theme-dark .btn.primary,
+body.theme-dark .btn.ghost,
+body.theme-dark .explore-btn,
+body.theme-dark .project-collapse-btn {
+  box-shadow:
+    0 0 0 transparent,
+    0 10px 28px rgba(56, 189, 248, 0.14);
+}
+
+
+/* Subtle elevation on hover */
+body.theme-dark .mission:hover,
+body.theme-dark .project-tile:hover,
+body.theme-dark .officer:hover {
+  box-shadow:
+    0 20px 60px rgba(56,189,248,0.25),
+    0 0 26px rgba(56,189,248,0.18) !important;
+}
+
+
+/* ===== DARK MODE HERO TAG POP ===== */
+body.theme-dark .hero-tag {
+  background: rgba(15, 23, 42, 0.96);          /* deeper navy chip */
+  border: 1px solid rgba(56, 189, 248, 0.7);   /* cyan outline */
+  color: #e5e7eb;                              /* bright text */
+  box-shadow:
+    0 8px 28px rgba(15, 23, 42, 0.7),
+    0 0 14px rgba(56, 189, 248, 0.35);         /* soft glow */
+}
+
+
+/* keep the green status dot bright */
+body.theme-dark .hero-tag .dot {
+  background: #22c55e;
+}
+
+/* ===== ENSURE ACTIVE TILE FILLS GRID WHEN EXPANDED ===== */
+
+/* In expanded mode, remove custom positions from all tiles */
+.projects-grid.expanded .project-tile {
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+
+/* Active tile spans full 7×6 grid */
+.projects-grid.expanded .project-tile.active {
+  grid-column: 1 / span 7 !important;
+  grid-row: 1 / span 6 !important;
+}

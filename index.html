@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>West Campus FRC</title>
+  <!-- Optional: Archscale-style fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://kit.fontawesome.com/eb28b34f1e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- ============ NAVBAR ============ -->
+    <header class="navbar">
+  <div class="nav-logo">
+    <div class="logo-mark">FRC</div>
+    <div class="logo-text">
+      <span>West Campus</span>
+      <span>Robotics Team 11274</span>
+    </div>
+  </div>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="nav-right">
+    <nav class="nav-links" id="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#mission">Mission</a>
+      <a href="#projects">Projects</a>
+      <a href="#officers">Officers</a>
+      <a href="#support">Support</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- theme toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light / dark mode">
+      <span class="theme-icon theme-icon-sun">
+        <i class="fa-solid fa-sun"></i>
+      </span>
+      <span class="theme-icon theme-icon-moon">
+        <i class="fa-solid fa-moon"></i>
+      </span>
+    </button>
+  </div>
+</header>
+
+
+    <!-- ============ HERO ============ -->
+    <main class="main">
+      <section class="hero" id="hero">
+        <div class="hero-left">
+          <p class="eyebrow">FIRST Robotics Competition · Team 11274</p>
+          <h1 class="hero-title">Engineering the next generation of problem solvers.</h1>
+          <p class="hero-subtitle">
+            West Campus FRC combines mechanical design, software, and teamwork to build robots that compete, 
+            and students who lead.
+          </p>
+          <div class="hero-actions">
+            <a href="#mission" class="btn primary">Explore our mission</a>
+            <a href="#officers" class="btn ghost">Meet the officers</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Active members</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">4</div>
+              <div class="stat-label">Subteams</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">∞</div>
+              <div class="stat-label">Late-night builds</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-image-frame">
+            <img src="robot-2791677_1920.jpg" alt="Robot build in progress" />
+          </div>
+          <div class="hero-tag">
+            <span class="dot"></span>
+            <span>2025 Season · In progress</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MISSION SECTION ============ -->
+      <section class="mission-section" id="mission">
+        <div class="section-header">
+          <p class="eyebrow">Our Mission</p>
+          <h2 class="section-title">Building robots, leaders, and community.</h2>
+          <p class="section-description">
+            We use FRC as a platform to explore engineering, grow leadership, and make STEM more accessible on our campus.
+          </p>
+        </div>
+
+        <div class="mission-grid">
+          <div class="mission">
+            <div class="mission-name">Inspire</div>
+            <div class="mission-about">
+              Our mission is to inspire young minds to excel in STEM through hands-on learning, teamwork, and innovation in robotics.
+            </div>
+            <div class="explore-btn">
+              <a href="#mission-inspire" class="explore-btn">Learn more</a>
+            </div>
+          </div>
+          <div class="mission">
+            <div class="mission-name">Engineer</div>
+            <div class="mission-about">
+              We design, prototype, and iterate on real competitive robots, applying physics, programming, and design thinking.
+            </div>
+            <div class="explore-btn">
+              <a href="#mission-engineer" class="explore-btn">View our process</a>
+            </div>
+          </div>
+          <div class="mission">
+            <div class="mission-name">Collaborate</div>
+            <div class="mission-about">
+              Our team thrives on communication, leadership, and collaboration across mechanical, electrical, and software subteams.
+            </div>
+            <div class="explore-btn">
+              <a href="#mission-collaborate" class="explore-btn">See subteams</a>
+            </div>
+          </div>
+          <div class="mission">
+            <div class="mission-name">Compete</div>
+            <div class="mission-about">
+              We bring our work to the regional FRC field, learning from wins, failures, and everything in between.
+            </div>
+            <div class="explore-btn">
+              <a href="#mission-compete" class="explore-btn">Competition info</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MISSION DETAIL: INSPIRE ============ -->
+<section class="mission-detail inspire-detail" id="mission-inspire">
+  <div class="mission-detail-inner">
+    <div class="mission-detail-text">
+      <p class="eyebrow">Inspire</p>
+      <h2 class="section-title">Turning curiosity into confidence.</h2>
+      <p class="section-description">
+        We don’t expect members to join with years of experience. We expect them to show up curious.
+        From the first week, new students get hands-on with tools, code, and robots in a safe, mentored
+        environment.
+      </p>
+
+      <ul class="mission-bullets">
+        <li><span><i class="fa-solid fa-flask"></i></span><div><strong>Onboarding labs.</strong> Short build and code challenges that take an idea from sketch to working prototype in a single meeting.</div></li>
+        <li><span><i class="fa-solid fa-person-chalkboard"></i></span><div><strong>Mini-lessons.</strong> Officers and mentors teach topics like “how to read a wiring diagram” or “what PID actually does” in 10–15 minutes.</div></li>
+        <li><span><i class="fa-solid fa-people-group"></i></span><div><strong>Shadow days.</strong> New members sit with an experienced student during real work sessions to see how the team runs.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION DETAIL: ENGINEER ============ -->
+<section class="mission-detail engineer-detail" id="mission-engineer">
+  <div class="mission-detail-inner">
+    <div class="mission-detail-text">
+      <p class="eyebrow">Engineer</p>
+      <h2 class="section-title">From whiteboard sketch to competition robot.</h2>
+      <p class="section-description">
+        Our build process is structured like a real engineering pipeline. Every week, the robot moves
+        further along the path from idea → CAD → prototype → final system.
+      </p>
+
+      <div class="process-timeline">
+        <div class="timeline-step" data-percent="20">
+          <div class="timeline-top">
+            <span class="timeline-label">Week 1 · Game Breakdown</span>
+            <span class="timeline-percent">0%</span>
+          </div>
+          <div class="timeline-bar">
+            <div class="timeline-bar-inner"></div>
+          </div>
+          <p class="timeline-desc">
+            Strategy meeting, whiteboard sketches, and deciding what our robot <em>will</em> and <em>won’t</em> do on the field.
+          </p>
+        </div>
+
+        <div class="timeline-step" data-percent="45">
+          <div class="timeline-top">
+            <span class="timeline-label">Weeks 2–3 · CAD & Prototyping</span>
+            <span class="timeline-percent">0%</span>
+          </div>
+          <div class="timeline-bar">
+            <div class="timeline-bar-inner"></div>
+          </div>
+          <p class="timeline-desc">
+            CAD models, cardboard mockups, and rapid-fire prototypes to decide on intakes, shooters, and drivetrains.
+          </p>
+        </div>
+
+        <div class="timeline-step" data-percent="75">
+          <div class="timeline-top">
+            <span class="timeline-label">Weeks 4–5 · Build & Wiring</span>
+            <span class="timeline-percent">0%</span>
+          </div>
+          <div class="timeline-bar">
+            <div class="timeline-bar-inner"></div>
+          </div>
+          <p class="timeline-desc">
+            CNC parts, assembly, clean electrical layout, and first full-robot power-on tests.
+          </p>
+        </div>
+
+        <div class="timeline-step" data-percent="100">
+          <div class="timeline-top">
+            <span class="timeline-label">Weeks 6+ · Tuning & Drive Practice</span>
+            <span class="timeline-percent">0%</span>
+          </div>
+          <div class="timeline-bar">
+            <div class="timeline-bar-inner"></div>
+          </div>
+          <p class="timeline-desc">
+            Autonomous routines, vision tuning, driver practice, and “break it now so it won’t break on the field.”
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION DETAIL: COLLABORATE ============ -->
+<section class="mission-detail collaborate-detail" id="mission-collaborate">
+  <div class="mission-detail-inner">
+    <div class="mission-detail-text">
+      <p class="eyebrow">Collaborate</p>
+      <h2 class="section-title">Subteams that move as one robot.</h2>
+      <p class="section-description">
+        Each subteam owns a part of the robot — but nothing ships unless everyone is in sync.
+        Weekly syncs, shared documentation, and cross-training keep the whole machine moving.
+      </p>
+
+      <div class="subteam-grid">
+        <div class="subteam-card">
+          <h3>Mechanical</h3>
+          <p>Designs and builds the structure, manipulators, and mechanisms that interact with game pieces.</p>
+          <ul>
+            <li>CAD & fabrication</li>
+            <li>Drivebase & superstructure</li>
+            <li>Pit repair crew at competition</li>
+          </ul>
+        </div>
+
+        <div class="subteam-card">
+          <h3>Programming</h3>
+          <p>Writes the code that turns metal and motors into a responsive, smart robot.</p>
+          <ul>
+            <li>Autonomous routines</li>
+            <li>Driver controls & tuning</li>
+            <li>Vision & sensor fusion</li>
+          </ul>
+        </div>
+
+        <div class="subteam-card">
+          <h3>Electrical</h3>
+          <p>Owns power, wiring, and reliability so the robot survives every match.</p>
+          <ul>
+            <li>Clean CAN & power routing</li>
+            <li>Labeling & documentation</li>
+            <li>Between-match diagnostics</li>
+          </ul>
+        </div>
+
+        <div class="subteam-card">
+          <h3>Outreach & Media</h3>
+          <p>Builds the story around the robot — sponsors, community events, and branding.</p>
+          <ul>
+            <li>Sponsorship outreach</li>
+            <li>Social media & branding</li>
+            <li>STEM events and demos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION DETAIL: COMPETE ============ -->
+<section class="mission-detail compete-detail" id="mission-compete">
+  <div class="mission-detail-inner">
+    <div class="mission-detail-text">
+      <p class="eyebrow">Compete</p>
+      <h2 class="section-title">Where all the late nights pay off.</h2>
+      <p class="section-description">
+        Competition is where we stress-test everything: our robot, our systems, and our teamwork. We show up early,
+        stay late, and treat every match as a data point.
+      </p>
+
+      <div class="event-card">
+        <div class="event-header">
+          <h3>2026 Sacramento FRC Regional</h3>
+          <span class="event-tag">Upcoming</span>
+        </div>
+        <div class="event-info-grid">
+          <div>
+            <div class="event-label">Dates</div>
+            <div class="event-value">March 14–16, 2026</div>
+          </div>
+          <div>
+            <div class="event-label">Location</div>
+            <div class="event-value">UC Davis Pavilion · Davis, CA</div>
+          </div>
+          <div>
+            <div class="event-label">Check-in</div>
+            <div class="event-value">Friday · 8:00 AM</div>
+          </div>
+          <div>
+            <div class="event-label">Match window</div>
+            <div class="event-value">Fri–Sat · 9:00 AM–6:00 PM</div>
+          </div>
+        </div>
+
+        <div class="event-opponents">
+          <div class="event-label">Teams we’re excited to see</div>
+          <div class="opponent-chips">
+            <span>Team 1678 · Citrus Circuits</span>
+            <span>Team 701 · RoboVikes</span>
+            <span>Team 3250 · Kennedy Robotics</span>
+            <span>+ many more NorCal teams</span>
+          </div>
+        </div>
+
+        <p class="event-note">
+          Spectators are welcome — bring signs, school spirit, and a loud voice.  
+          Pit tours available between matches if you want to see the robot up close.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <!-- ============ PROJECTS ============ -->
+<section class="projects-section" id="projects">
+  <div class="section-header">
+    <p class="eyebrow">Projects</p>
+    <h2 class="section-title">What we’re building.</h2>
+    <p class="section-description">
+      Each square represents a live project. Click one to dive into the details.
+    </p>
+  </div>
+
+  <!-- Masonry-style grid -->
+  <div class="projects-grid">
+    <div class="project-tile large"
+         data-title="Drivetrain Redesign"
+         data-desc="Building a lightweight holonomic drivetrain for better agility and defensive endurance across matches."
+         data-members="Daniel, Owen, Kai"
+         data-img="robot-6947000_1920.jpg">
+    </div>
+
+    <div class="project-tile wide"
+         data-title="Vision Tracking"
+         data-desc="AI-powered AprilTag detection feeding real-time pose estimates into autonomous path planning."
+         data-members="Emily, Jordan"
+         data-img="engineer-4915804_1920.jpg">
+    </div>
+
+    <div class="project-tile tall"
+         data-title="Shooter Prototype"
+         data-desc="Spin-up wheel shooter with adjustable hood for high-accuracy scoring at varying distances."
+         data-members="Cody, Daniel"
+         data-img="engineer-8499904_1920.jpg">
+    </div>
+
+    <div class="project-tile"
+         data-title="Electrical Board"
+         data-desc="Reworking power routing, CAN loops, and labeling so repairs between matches take minutes, not hours."
+         data-members="Kai, Emily"
+         data-img="engineer-4915810_1920.jpg">
+    </div>
+
+    <div class="project-tile small"
+         data-title="CAD Kitbot"
+         data-desc="Full parametric CAD assembly of the base chassis so new members can learn from a clean model."
+         data-members="Owen, Cody"
+         data-img="software-development-6523979_1920.jpg">
+    </div>
+
+    <div class="project-tile wide"
+         data-title="Intake Arm"
+         data-desc="Deployable intake tuned for fast floor pickup without compromising frame perimeter rules."
+         data-members="Daniel, Jordan"
+         data-img="robot-2791677_1920.jpg">
+    </div>
+  </div>
+</section>
+
+
+      <!-- ============ OFFICERS SECTION ============ -->
+      <section class="officer-section" id="officers">
+        <div class="section-header">
+          <p class="eyebrow">Leadership</p>
+          <h2 class="section-title">Meet our officers.</h2>
+          <p class="section-description">
+            Each officer leads a part of the team — from mechanics to programming to outreach — keeping our robot and culture moving.
+          </p>
+        </div>
+
+        <div class="officers">
+          <div class="officer" id="danielg">
+            <div class="picture">
+              <img src="1000006856.jpg" alt="Daniel Gonzales-Sanders">
+            </div>
+            <div class="officer-cover">Daniel G.</div>
+          </div>
+
+          <div class="officer" id="emilyn">
+            <div class="picture">
+              <img src="1000006857.jpg" alt="Emily Nguyen">
+            </div>
+            <div class="officer-cover">Emily N.</div>
+          </div>
+
+          <div class="officer" id="codyy">
+            <div class="picture">
+              <img src="1000006858.jpg" alt="Cody Yin">
+            </div>
+            <div class="officer-cover">Cody Y.</div>
+          </div>
+
+          <div class="officer" id="jordanb">
+            <div class="picture">
+              <img src="9068102699051357667.jpg.jpeg" alt="Jordan Bailey">
+            </div>
+            <div class="officer-cover">Jordan B.</div>
+          </div>
+
+          <div class="officer" id="kaib">
+            <div class="picture">
+              <img src="kaib.png" alt="Kai Bzoskie">
+            </div>
+            <div class="officer-cover">Kai B.</div>
+          </div>
+
+          <div class="officer" id="owenk">
+            <div class="picture">
+              <img src="1000006859.jpg" alt="Owen Kay">
+            </div>
+            <div class="officer-cover">Owen K.</div>
+          </div>
+          <div class="officer" id="thachn" style="justify-self: center;">
+            <div class="picture">
+              <img src="1000006859.jpg" alt="Thach Ngu">
+            </div>
+            <div class="officer-cover">Thach N.</div>
+          </div>
+          
+
+          <!-- Officer popup -->
+          <div class="officer-popup" id="officer-popup">
+            <div class="close-btn" id="popup-close">×</div>
+            <div class="officer-popup-top">
+              <div class="officer-popup-img">
+                <img src="1000006856.jpg" alt="" id="officer-popup-img">
+              </div>
+              <div class="officer-popup-name-role">
+                <div class="officer-popup-name" id="officer-popup-name">Officer Name</div>
+                <div class="officer-popup-role" id="officer-popup-role">Role</div>
+              </div>
+            </div>
+            <div class="officer-popup-bottom" id="officer-popup-bio">
+              Officer bio goes here.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SUPPORT / FOOTER CTA ============ -->
+      <section class="support-section" id="support">
+        <div class="support-inner">
+          <div class="support-left">
+            <p class="eyebrow">Support the team</p>
+            <h2 class="section-title">Help us build what’s next.</h2>
+            <p class="section-description">
+              Sponsorships, mentorship, parts, or even snacks — every contribution helps us learn, iterate, and compete.
+            </p>
+          </div>
+          <div class="support-right">
+            <a href="mailto:Wchsfrc@gmail.com" id="contact-btn" class="btn primary">Contact us</a>
+            <button class="btn ghost" id="download-btn" type="button" >
+              <a href="Red and White Corporate Manager Services Contract A4.pdf" class="download-btn" download>Download sponsor packet</a></button>
+          </div>
+        </div>
+      </section>
+
+        <section class="contact-section" id="contact">
+        <div class="contact-inner">
+          <div class="contact-left">
+            <p class="eyebrow">Contact</p>
+            <h2 class="section-title">Get in touch with the team.</h2>
+            <p class="section-description">
+              Have questions about joining, mentoring, or supporting West Campus FRC? 
+              Send us a message and we’ll get you as soon as we’re off the build schedule.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-row">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <div class="contact-label">Email</div>
+                  <a href="mailto:Wchsfrc@gmail.com">Wchsfrc@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <div class="contact-label">Location</div>
+                  <div>West Campus High School · Sacramento, CA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" action="https://formsubmit.co/Wchsfrc@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message from West Campus FRC site">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_autoresponse" value="Thanks for contacting West Campus Robotics! We'll reply soon.">
+            <input type="hidden" name="_next" value="">
+
+            <input type="text" name="_honey" style="display:none">
+
+
+            <div class="form-row">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-row">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="(555) 123-4567"
+                pattern="[\d\s\-\+\(\)]{7,}" inputmode="numeric" required
+
+              >
+            </div>
+
+            <div class="form-row">
+              <label for="organization">Organization</label>
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                placeholder="School, company, or team name" required
+              >
+            </div>
+
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us how you’d like to get involved." required></textarea>
+            </div>
+            <button type="submit" class="btn primary form-submit">Send message</button>
+            <p class="form-success" id="form-success">
+              Thanks for contacting West Campus Robotics! We'll reply within 48 hours.
+            </p>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left">
+        <div class="logo-mark">FRC</div>
+        <span>West Campus High School Robotics · Team 11274</span>
+      </div>
+      <div class="footer-right">
+        <span>© 2025 West Campus Robotics</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
