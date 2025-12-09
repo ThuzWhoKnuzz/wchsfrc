@@ -48,7 +48,7 @@ const officersArray = [
     'https://via.placeholder.com/400x400'],
   ['thachn', 'Thach Ngu', 'Web Developer',
     'My name is Thach. I design and maintain our team website, ensuring it effectively showcases our projects, members, and achievements.',
-    'https://via.placeholder.com/400x400'],
+    'IMG_5117.jpg'],
 ];
 
 
