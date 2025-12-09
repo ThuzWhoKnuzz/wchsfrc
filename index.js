@@ -49,6 +49,9 @@ const officersArray = [
   ['thachn', 'Thach Ngu', 'Web Developer',
     'I design, build, and maintain our team website using HTML, CSS, and JavaScript to showcase projects, outreach, and competition updates. I focus on creating responsive layouts and clean user experiences that make information easy to access for team members, sponsors, and judges. I collaborate with subteams to translate technical robotics work into clear, visually engaging online content. I manage updates through GitHub, troubleshoot layout and performance issues, and refine features to keep the website reliable and professional. Through encouraging creative input, I help grow technical skills while strengthening our team’s digital presence.',
     'IMG_5117.jpg'],
+    ['tims', 'Timmothy Shen', 'Vision Team Lead',
+    'I develop and implement computer vision algorithms to enable the robot to detect and track objects on the field using cameras and sensors. I work closely with programmers to integrate vision processing into autonomous routines for tasks like target alignment and object recognition. I research and test different vision libraries and techniques to improve accuracy and speed. I also mentor team members interested in vision programming by teaching concepts like image processing and machine learning. Through innovation and collaboration, I help enhance the robot’s capabilities for competition.',
+    'IMG_5117.jpg'],
 ];
 
 
