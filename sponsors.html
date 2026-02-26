@@ -148,6 +148,13 @@
       margin-bottom: 1rem;
     }
 
+    .sponsor-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
     .sponsor-name {
       font-size: 1.05rem;
       font-weight: 600;
@@ -469,42 +476,42 @@
   // Replace these with your real sponsors!
   const SPONSORS = [
     {
-      id: 1, name: "NovaTech Industries", logo: "NT", tier: "Platinum",
+      id: 1, name: "NovaTech Industries", img: "" "NT", tier: "Platinum",
       accent: "#9b59b6", amount: "$50,000", since: "2021", website: "homedepot.com",
       details: "Supporting AI research and innovation initiatives across our engineering programs, funding lab equipment and competition travel."
     },
     {
-      id: 2, name: "Orion Labs", logo: "OL", tier: "Platinum",
+      id: 2, name: "Orion Labs", img: "" "OL", tier: "Platinum",
       accent: "#9b59b6", amount: "$35,000", since: "2022", website: "acehardware.com",
       details: "Dedicated to empowering student robotics teams with hardware grants and mentorship from professional engineers."
     },
     {
-      id: 3, name: "Synthex", logo: "SX", tier: "Gold",
+      id: 3, name: "Synthex", img: "kaib.png", tier: "Gold",
       accent: "#d4a017", amount: "$18,000", since: "2023", website: "lowes.com",
       details: "Funding workshops on synthetic data and machine learning pipelines for our software subteam."
     },
     {
-      id: 4, name: "DataForge", logo: "DF", tier: "Gold",
+      id: 4, name: "DataForge", img: "kaib.png", tier: "Gold",
       accent: "#d4a017", amount: "$12,500", since: "2023", website: "blackstone.com",
       details: "Providing cloud credits and data infrastructure for competition simulations and autonomous routine testing."
     },
     {
-      id: 5, name: "IronCore Mfg.", logo: "IC", tier: "Silver",
+      id: 5, name: "IronCore Mfg.", img: "kaib.png", tier: "Silver",
       accent: "#6b7280", amount: "$8,000", since: "2024", website: "frc.org",
       details: "Donating precision-machined parts and sponsoring hands-on manufacturing education for our mechanical subteam."
     },
     {
-      id: 6, name: "Volt Systems", logo: "VS", tier: "Silver",
+      id: 6, name: "Volt Systems", img: "kaib.png", tier: "Silver",
       accent: "#6b7280", amount: "$6,200", since: "2024", website: "voltsys.com",
       details: "Providing electrical components, batteries, and power systems — keeping our robot powered through every match."
     },
     {
-      id: 7, name: "Crestwood Tools", logo: "CT", tier: "Bronze",
+      id: 7, name: "Crestwood Tools", img: "kaib.png", tier: "Bronze",
       accent: "#b87333", amount: "$3,000", since: "2024", website: "crestwoodtools.com",
       details: "Supplying hand tools and shop equipment for our build space, directly improving our fabrication capability."
     },
     {
-      id: 8, name: "Pacific Print Co.", logo: "PP", tier: "Bronze",
+      id: 8, name: "Pacific Print Co.", img: "kaib.png", tier: "Bronze",
       accent: "#b87333", amount: "$1,500", since: "2025", website: "pacificprint.co",
       details: "Sponsoring all team apparel, banners, pit display materials, and printed outreach content."
     }
@@ -536,7 +543,9 @@
         card.style.setProperty("--card-accent", s.accent);
         card.innerHTML = `
           <div class="sponsor-tier-badge"><div class="tier-dot"></div>${s.tier}</div>
-          <div class="sponsor-logo">${s.logo}</div>
+          <div class="sponsor-logo">
+            <img src="${s.img}" alt="${s.name} logo" />
+          </div>
           <div class="sponsor-name">${s.name}</div>
           <div class="sponsor-website">${s.website}</div>
           <div class="sponsor-expanded">
