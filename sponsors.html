@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sponsors · West Campus FRC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #c0392b;
+      --red-dark: #a93226;
+      --red-light: #e74c3c;
+      --black: #0d0d0d;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --gray: #888;
+      --gray-light: #ccc;
+      --white: #ffffff;
+      --off-white: #f5f5f3;
+      --border: #e0e0e0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--black);
+    }
+
+    .nav-logo-badge {
+      background: var(--red);
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .nav-logo-text {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--black);
+    }
+
+    .nav-logo-text span {
+      display: block;
+      font-weight: 400;
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--black); }
+    .nav-links a.active { color: var(--red); font-weight: 600; }
+
+    /* ── HERO ── */
+    .sponsors-hero {
+      padding-top: 64px;
+      background: var(--dark);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .sponsors-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(192,57,43,0.18) 0%, transparent 70%),
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px);
+    }
+
+    .sponsors-hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 60px 80px 60px;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 16px;
+    }
+
+    .sponsors-hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: white;
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
+
+    .sponsors-hero p {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    /* ── TIER LEGEND ── */
+    .tier-bar {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 80px;
+    }
+
+    .tier-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+    }
+
+    .tier-tab {
+      padding: 16px 24px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray);
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .tier-tab.active, .tier-tab:hover { color: var(--black); }
+    .tier-tab[data-tier="all"].active { border-color: var(--black); color: var(--black); }
+    .tier-tab[data-tier="Platinum"].active { border-color: #9b59b6; color: #9b59b6; }
+    .tier-tab[data-tier="Gold"].active { border-color: #d4a017; color: #d4a017; }
+    .tier-tab[data-tier="Silver"].active { border-color: #666; color: #666; }
+    .tier-tab[data-tier="Bronze"].active { border-color: #b87333; color: #b87333; }
+
+    /* ── MAIN CONTENT ── */
+    .sponsors-main {
+      padding: 72px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* ── GRID ── */
+    .sponsors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── CARD ── */
+    .sponsor-card {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+      overflow: hidden;
+    }
+
+    .sponsor-card:hover {
+      border-color: #bbb;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .sponsor-card.active {
+      border-color: var(--card-color, var(--red));
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+      transform: translateY(-3px);
+    }
+
+    .card-top-bar {
+      height: 4px;
+      width: 100%;
+      background: var(--card-color, var(--red));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .sponsor-card.active .card-top-bar,
+    .sponsor-card:hover .card-top-bar { opacity: 1; }
+
+    .card-body {
+      padding: 28px 24px 24px;
+    }
+
+    .card-tier {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--card-color, var(--gray));
+      background: color-mix(in srgb, var(--card-color, #888) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--card-color, #888) 20%, transparent);
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .card-tier-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--card-color, var(--gray));
+    }
+
+    .card-logo {
+      width: 56px; height: 56px;
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--card-color, #888) 12%, white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--card-color, var(--gray));
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+      border: 1.5px solid color-mix(in srgb, var(--card-color, #888) 20%, transparent);
+    }
+
+    .card-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .card-website {
+      font-size: 12px;
+      color: var(--gray);
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+
+    /* Expanded section */
+    .card-expanded {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+      opacity: 0;
+    }
+
+    .sponsor-card.active .card-expanded {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    .card-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 20px 0;
+    }
+
+    .card-stats {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+
+    .card-stat-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
+
+    .card-stat-value {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--card-color, var(--black));
+      letter-spacing: -0.03em;
+    }
+
+    .card-stat-value.neutral { color: var(--black); }
+
+    .card-details {
+      background: var(--off-white);
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 4px;
+    }
+
+    .card-details-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 8px;
+    }
+
+    .card-details-text {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    /* ── ROBOT ARM CANVAS ── */
+    #arm-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 500;
+    }
+
+    /* ── BECOME A SPONSOR ── */
+    .become-sponsor {
+      background: var(--dark);
+      color: white;
+      padding: 80px;
+    }
+
+    .become-sponsor-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .become-sponsor h2 {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .become-sponsor p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover { background: var(--red-dark); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: border-color 0.2s, background 0.2s;
+      margin-left: 12px;
+    }
+
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+    .tier-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .tier-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+    }
+
+    .tier-row-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .tier-row-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
+      flex: 1;
+    }
+
+    .tier-row-amount {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.35);
+      padding: 32px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* ── HINT ── */
+    .click-hint {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 28px;
+    }
+
+    .click-hint svg { opacity: 0.5; }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      font-size: 15px;
+      color: var(--gray);
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    /* ── ARM STATUS ── */
+    .arm-status {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--dark);
+      color: white;
+      font-size: 11px;
+      font-family: 'Inter', monospace;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      padding: 8px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 600;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .arm-status.visible { opacity: 1; }
+
+    .arm-status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #2ecc71;
+      animation: blink 1.2s infinite;
+    }
+
+    .arm-status-dot.moving { background: var(--red-light); }
+    .arm-status-dot.retracting { background: #f39c12; }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .sponsors-hero-inner { padding: 40px 24px; }
+      .tier-bar { padding: 0 24px; }
+      .sponsors-main { padding: 48px 24px; }
+      .become-sponsor { padding: 60px 24px; }
+      .become-sponsor-inner { grid-template-columns: 1fr; gap: 40px; }
+      footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-badge">FRC</div>
+      <div class="nav-logo-text">
+        West Campus
+        <span>Robotics Team 11274</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#hero">Home</a></li>
+      <li><a href="index.html#mission">Mission</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#officers">Officers</a></li>
+      <li><a href="sponsors.html" class="active">Sponsors</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="sponsors-hero">
+    <div class="sponsors-hero-inner">
+      <div class="section-label">Team 11274 · Sponsors</div>
+      <h1>The people who make it possible.</h1>
+      <p>West Campus FRC runs on the generosity of our sponsors. Every donation goes directly toward parts, registration, travel, and building a stronger team.</p>
+    </div>
+  </section>
+
+  <!-- TIER FILTER TABS -->
+  <div class="tier-bar">
+    <div class="tier-bar-inner">
+      <div class="tier-tab active" data-tier="all">All Sponsors</div>
+      <div class="tier-tab" data-tier="Platinum">Platinum</div>
+      <div class="tier-tab" data-tier="Gold">Gold</div>
+      <div class="tier-tab" data-tier="Silver">Silver</div>
+      <div class="tier-tab" data-tier="Bronze">Bronze</div>
+    </div>
+  </div>
+
+  <!-- ROBOT ARM CANVAS -->
+  <canvas id="arm-canvas"></canvas>
+
+  <!-- ARM STATUS BADGE -->
+  <div class="arm-status" id="arm-status">
+    <div class="arm-status-dot" id="arm-dot"></div>
+    <span id="arm-status-text">ARM IDLE</span>
+  </div>
+
+  <!-- SPONSORS GRID -->
+  <main class="sponsors-main">
+    <div class="section-header">
+      <div class="section-label">Our Partners</div>
+      <h2>Sponsors who believe in us.</h2>
+      <p>Click any sponsor card to deploy the retrieval arm and learn more about their contribution.</p>
+    </div>
+
+    <div class="click-hint">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/></svg>
+      Click any card to see details
+    </div>
+
+    <div class="sponsors-grid" id="sponsors-grid">
+      <!-- Cards injected by JS -->
+    </div>
+  </main>
+
+  <!-- BECOME A SPONSOR -->
+  <section class="become-sponsor">
+    <div class="become-sponsor-inner">
+      <div>
+        <div class="section-label" style="color: rgba(255,255,255,0.4);">Get Involved</div>
+        <h2>Become a sponsor.</h2>
+        <p>Your contribution helps us compete, learn, and grow. Whether it's $500 or $50,000 — every dollar is used to build better engineers and a better robot.</p>
+        <div>
+          <a href="mailto:wchsfrc@gmail.com" class="btn-primary">Contact us</a>
+          <a href="Red and White Corporate Manager Services Contract A4.pdf" class="btn-secondary">Download packet ↓</a>
+        </div>
+      </div>
+      <div class="tier-breakdown">
+        <div class="tier-row">
+          <div class="tier-row-dot" style="background: #9b59b6;"></div>
+          <span class="tier-row-name">Platinum</span>
+          <span class="tier-row-amount">$25,000+</span>
+        </div>
+        <div class="tier-row">
+          <div class="tier-row-dot" style="background: #d4a017;"></div>
+          <span class="tier-row-name">Gold</span>
+          <span class="tier-row-amount">$10,000–$24,999</span>
+        </div>
+        <div class="tier-row">
+          <div class="tier-row-dot" style="background: #888;"></div>
+          <span class="tier-row-name">Silver</span>
+          <span class="tier-row-amount">$5,000–$9,999</span>
+        </div>
+        <div class="tier-row">
+          <div class="tier-row-dot" style="background: #b87333;"></div>
+          <span class="tier-row-name">Bronze</span>
+          <span class="tier-row-amount">$1,000–$4,999</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>West Campus High School Robotics · Team 11274</div>
+    <div>© 2025 West Campus Robotics · <a href="mailto:wchsfrc@gmail.com">wchsfrc@gmail.com</a></div>
+  </footer>
+
+  <script>
+    // ── SPONSOR DATA ──
+    const SPONSORS = [
+      {
+        id: 1, name: "NovaTech Industries", logo: "NT", tier: "Platinum",
+        color: "#9b59b6", amount: "$50,000", since: "2021", website: "novatech.io",
+        details: "Supporting AI research and innovation initiatives across our engineering programs, funding lab equipment and competition travel."
+      },
+      {
+        id: 2, name: "Orion Labs", logo: "OL", tier: "Platinum",
+        color: "#9b59b6", amount: "$35,000", since: "2022", website: "orionlabs.co",
+        details: "Dedicated to empowering student robotics teams with hardware grants and mentorship from professional engineers."
+      },
+      {
+        id: 3, name: "Synthex", logo: "SX", tier: "Gold",
+        color: "#d4a017", amount: "$18,000", since: "2023", website: "synthex.ai",
+        details: "Funding workshops on synthetic data and machine learning pipelines, helping our software team stay on the cutting edge."
+      },
+      {
+        id: 4, name: "DataForge", logo: "DF", tier: "Gold",
+        color: "#d4a017", amount: "$12,500", since: "2023", website: "dataforge.dev",
+        details: "Providing cloud credits and data infrastructure for competition simulations and autonomous routine testing."
+      },
+      {
+        id: 5, name: "IronCore Mfg.", logo: "IC", tier: "Silver",
+        color: "#777", amount: "$8,000", since: "2024", website: "ironcore.mfg",
+        details: "Donating precision-machined parts and sponsoring hands-on manufacturing education for our mechanical subteam."
+      },
+      {
+        id: 6, name: "Volt Systems", logo: "VS", tier: "Silver",
+        color: "#777", amount: "$6,200", since: "2024", website: "voltsys.com",
+        details: "Providing electrical components, batteries, and power systems — keeping our robot powered through every match."
+      },
+      {
+        id: 7, name: "Crestwood Tools", logo: "CT", tier: "Bronze",
+        color: "#b87333", amount: "$3,000", since: "2024", website: "crestwoodtools.com",
+        details: "Supplying hand tools and shop equipment for our build space, directly improving our fabrication capability."
+      },
+      {
+        id: 8, name: "Pacific Print Co.", logo: "PP", tier: "Bronze",
+        color: "#b87333", amount: "$1,500", since: "2025", website: "pacificprint.co",
+        details: "Sponsoring all team apparel, banners, pit display materials, and printed outreach materials."
+      }
+    ];
+
+    const TIER_ORDER = { Platinum: 0, Gold: 1, Silver: 2, Bronze: 3 };
+    const sorted = [...SPONSORS].sort((a, b) => TIER_ORDER[a.tier] - TIER_ORDER[b.tier]);
+
+    // ── STATE ──
+    let activeId = null;
+    let phase = "idle"; // idle | moving | open | retracting | retracted
+    let armX = -200, armY = window.innerHeight + 100;
+    let armTargetX = -200, armTargetY = window.innerHeight + 100;
+    let armColor = "#c0392b";
+    let fingersOpen = false;
+    let rafId = null;
+
+    // ── BUILD CARDS ──
+    const grid = document.getElementById("sponsors-grid");
+
+    function buildCards(filterTier = "all") {
+      grid.innerHTML = "";
+      const visible = sorted.filter(s => filterTier === "all" || s.tier === filterTier);
+      visible.forEach(s => {
+        const card = document.createElement("div");
+        card.className = "sponsor-card";
+        card.id = `card-${s.id}`;
+        card.style.setProperty("--card-color", s.color);
+        card.innerHTML = `
+          <div class="card-top-bar"></div>
+          <div class="card-body">
+            <div class="card-tier">
+              <div class="card-tier-dot"></div>
+              ${s.tier}
+            </div>
+            <div class="card-logo">${s.logo}</div>
+            <div class="card-name">${s.name}</div>
+            <div class="card-website">${s.website}</div>
+            <div class="card-expanded">
+              <div class="card-divider"></div>
+              <div class="card-stats">
+                <div>
+                  <div class="card-stat-label">Donated</div>
+                  <div class="card-stat-value">${s.amount}</div>
+                </div>
+                <div>
+                  <div class="card-stat-label">Partner Since</div>
+                  <div class="card-stat-value neutral">${s.since}</div>
+                </div>
+              </div>
+              <div class="card-details">
+                <div class="card-details-label">About this sponsorship</div>
+                <div class="card-details-text">${s.details}</div>
+              </div>
+            </div>
+          </div>
+        `;
+        card.addEventListener("click", () => handleCardClick(s));
+        grid.appendChild(card);
+      });
+    }
+
+    buildCards();
+
+    // ── TIER TABS ──
+    document.querySelectorAll(".tier-tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        document.querySelectorAll(".tier-tab").forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        activeId = null;
+        phase = "idle";
+        fingersOpen = false;
+        armTargetX = -200;
+        armTargetY = window.innerHeight + 100;
+        buildCards(tab.dataset.tier);
+      });
+    });
+
+    // ── CARD CLICK ──
+    function handleCardClick(sponsor) {
+      if (phase === "moving" || phase === "retracting") return;
+
+      const card = document.getElementById(`card-${sponsor.id}`);
+      if (!card) return;
+
+      // Toggle off
+      if (activeId === sponsor.id) {
+        document.querySelectorAll(".sponsor-card").forEach(c => c.classList.remove("active"));
+        activeId = null;
+        phase = "idle";
+        fingersOpen = false;
+        armTargetX = -200;
+        armTargetY = window.innerHeight + 100;
+        setArmStatus("idle", "ARM IDLE");
+        return;
+      }
+
+      // Close current if any
+      document.querySelectorAll(".sponsor-card").forEach(c => c.classList.remove("active"));
+      activeId = null;
+
+      const rect = card.getBoundingClientRect();
+      const targetX = rect.left + rect.width / 2;
+      const targetY = rect.top + rect.height / 2;
+
+      armColor = sponsor.color;
+      phase = "moving";
+      armTargetX = targetX;
+      armTargetY = targetY;
+      setArmStatus("moving", "DEPLOYING ARM");
+
+      setTimeout(() => {
+        card.classList.add("active");
+        activeId = sponsor.id;
+        phase = "open";
+        fingersOpen = true;
+        setArmStatus("open", "CARD OPENED");
+
+        // Retract after fingers open
+        setTimeout(() => {
+          phase = "retracting";
+          fingersOpen = false;
+          armTargetX = -200;
+          armTargetY = window.innerHeight + 200;
+          setArmStatus("retracting", "RETRACTING");
+
+          setTimeout(() => {
+            phase = "retracted";
+            setArmStatus("idle", "ARM STANDBY");
+            setTimeout(() => hideArmStatus(), 1500);
+          }, 900);
+        }, 700);
+      }, 950);
+    }
+
+    // ── ARM STATUS BADGE ──
+    const armStatusEl = document.getElementById("arm-status");
+    const armDotEl = document.getElementById("arm-dot");
+    const armStatusText = document.getElementById("arm-status-text");
+
+    function setArmStatus(state, text) {
+      armStatusEl.classList.add("visible");
+      armStatusText.textContent = text;
+      armDotEl.className = "arm-status-dot " + (state === "moving" ? "moving" : state === "retracting" ? "retracting" : "");
+    }
+
+    function hideArmStatus() {
+      armStatusEl.classList.remove("visible");
+    }
+
+    // ── CANVAS + ARM DRAW ──
+    const canvas = document.getElementById("arm-canvas");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function drawArm() {
+      // Lerp arm toward target
+      armX = lerp(armX, armTargetX, 0.1);
+      armY = lerp(armY, armTargetY, 0.1);
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const isVisible = phase !== "idle" && phase !== "retracted";
+      const opacity = phase === "retracting"
+        ? Math.max(0, 1 - Math.abs(armX - armTargetX) / 400)
+        : 1;
+
+      if (!isVisible) {
+        rafId = requestAnimationFrame(drawArm);
+        return;
+      }
+
+      ctx.save();
+      ctx.globalAlpha = opacity;
+
+      const baseX = -60;
+      const baseY = armY + 140;
+      const seg1X = baseX + (armX - baseX) * 0.38;
+      const seg1Y = baseY - 50;
+      const seg2X = baseX + (armX - baseX) * 0.72;
+      const seg2Y = armY + 25;
+      const handX = armX - 16;
+      const handY = armY - 8;
+
+      // Glow helper
+      function glowLine(x1, y1, x2, y2, width, color) {
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 12;
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.lineCap = "round";
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+      }
+
+      function glowCircle(x, y, r, fill, stroke) {
+        ctx.shadowColor = stroke;
+        ctx.shadowBlur = 8;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fillStyle = fill;
+        ctx.fill();
+        ctx.strokeStyle = stroke;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+      }
+
+      const col = armColor;
+
+      // Arm segments
+      glowLine(baseX, baseY, seg1X, seg1Y, 5, col);
+      glowCircle(seg1X, seg1Y, 6, "#111", col);
+      glowLine(seg1X, seg1Y, seg2X, seg2Y, 4, col);
+      glowCircle(seg2X, seg2Y, 5, "#111", col);
+      glowLine(seg2X, seg2Y, handX, handY, 3, col);
+
+      // Hand base
+      ctx.shadowColor = col;
+      ctx.shadowBlur = 8;
+      ctx.fillStyle = "#111";
+      ctx.strokeStyle = col;
+      ctx.lineWidth = 1.5;
+      roundRect(ctx, handX - 6, handY - 7, 28, 16, 3);
+      ctx.fill();
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      // Fingers
+      for (let i = 0; i < 4; i++) {
+        const fx = handX + i * 7;
+        const fy = handY - 7;
+        const angle = fingersOpen ? ((-28 + i * 12) * Math.PI / 180) : 0;
+
+        ctx.save();
+        ctx.translate(fx + 3, fy);
+        ctx.rotate(angle);
+
+        // Knuckle 1
+        ctx.shadowColor = col;
+        ctx.shadowBlur = 6;
+        ctx.fillStyle = "#111";
+        ctx.strokeStyle = col;
+        ctx.lineWidth = 1.5;
+        roundRect(ctx, -3, -14, 6, 14, 2);
+        ctx.fill();
+        ctx.stroke();
+
+        // Knuckle 2
+        ctx.save();
+        ctx.translate(0, -14);
+        ctx.rotate(fingersOpen ? (-15 * Math.PI / 180) : 0);
+        roundRect(ctx, -2.5, -11, 5, 11, 2);
+        ctx.fill();
+        ctx.stroke();
+
+        // Fingertip glow
+        if (fingersOpen) {
+          ctx.beginPath();
+          ctx.arc(0, -13, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = col;
+          ctx.shadowBlur = 10;
+          ctx.fill();
+        }
+        ctx.restore();
+        ctx.restore();
+      }
+
+      // Wrist joint
+      glowCircle(handX + 8, handY, 4, "#111", col);
+
+      ctx.restore();
+      rafId = requestAnimationFrame(drawArm);
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.arcTo(x + w, y, x + w, y + r, r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.arcTo(x + w, y + h, x + w - r, y + h, r);
+      ctx.lineTo(x + r, y + h);
+      ctx.arcTo(x, y + h, x, y + h - r, r);
+      ctx.lineTo(x, y + r);
+      ctx.arcTo(x, y, x + r, y, r);
+      ctx.closePath();
+    }
+
+    rafId = requestAnimationFrame(drawArm);
+  </script>
+</body>
+</html>
