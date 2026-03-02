@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sponsors · West Campus FRC</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://kit.fontawesome.com/eb28b34f1e.js" crossorigin="anonymous"></script>
+  <style>
+    /* ── SPONSORS PAGE ONLY STYLES ── */
+
+    .sponsors-hero {
+      padding: 4.5rem 5vw 3.5rem;
+      border-bottom: 1px solid rgba(148,163,184,0.25);
+    }
+    body.theme-dark .sponsors-hero {
+      border-bottom-color: rgba(56,189,248,0.12);
+    }
+    .sponsors-hero-inner { max-width: 720px; }
+    .sponsors-hero .hero-title { margin-bottom: 1rem; }
+    .sponsors-hero .hero-subtitle { margin-bottom: 2rem; }
+
+    /* Tier tabs */
+    .tier-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      padding: 1.2rem 5vw;
+      border-bottom: 1px solid rgba(148,163,184,0.2);
+      background: var(--bg-soft);
+    }
+    body.theme-dark .tier-tabs {
+      background: rgba(15,23,42,0.6);
+      border-bottom-color: rgba(56,189,248,0.1);
+    }
+    .tier-tab {
+      padding: 0.42rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: transparent;
+      border: 1px solid rgba(148,163,184,0.35);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: "DM Sans", sans-serif;
+    }
+    .tier-tab:hover { color: var(--text-main); border-color: #111827; }
+    .tier-tab.active { background: #111827; color: white; border-color: #111827; }
+    body.theme-dark .tier-tab:hover { border-color: #38bdf8; color: #38bdf8; }
+    body.theme-dark .tier-tab.active { background: #38bdf8; color: #020617; border-color: #38bdf8; }
+
+    /* Sponsors section */
+    .sponsors-section { padding: 3.5rem 5vw 4rem; }
+
+    /* Sponsor grid */
+    .sponsors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Sponsor card — mirrors .mission card */
+    .sponsor-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 14px 35px rgba(15,23,42,0.08);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition:
+        background-color 0.35s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .sponsor-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--card-accent, #111827);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .sponsor-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 45px rgba(15,23,42,0.13);
+      border-color: rgba(148,163,184,0.3);
+    }
+    .sponsor-card:hover::before,
+    .sponsor-card.active::before { opacity: 1; }
+    .sponsor-card.active {
+      border-color: var(--card-accent, #111827);
+      box-shadow: 0 20px 50px rgba(15,23,42,0.15);
+      transform: translateY(-3px);
+    }
+    body.theme-dark .sponsor-card {
+      background: radial-gradient(circle at top left, #111827, #020617 70%);
+      border-color: #1f2937;
+      box-shadow: 0 14px 45px rgba(56,189,248,0.18), 0 0 16px rgba(56,189,248,0.15);
+    }
+    body.theme-dark .sponsor-card:hover,
+    body.theme-dark .sponsor-card.active {
+      box-shadow: 0 20px 60px rgba(56,189,248,0.25), 0 0 26px rgba(56,189,248,0.18) !important;
+    }
+
+    /* Tier badge */
+    .sponsor-tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--card-accent, #6b7280);
+      border: 1px solid color-mix(in srgb, var(--card-accent, #6b7280) 30%, transparent);
+      background: color-mix(in srgb, var(--card-accent, #6b7280) 8%, transparent);
+      padding: 0.22rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 1.2rem;
+      width: fit-content;
+    }
+    .tier-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--card-accent, #6b7280);
+    }
+
+    /* Logo mark */
+    .sponsor-logo {
+      width: 52px; height: 52px;
+      border-radius: var(--radius-md);
+      background: color-mix(in srgb, var(--card-accent, #111827) 10%, transparent);
+      border: 1.5px solid color-mix(in srgb, var(--card-accent, #111827) 25%, transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--card-accent, #111827);
+      margin-bottom: 1rem;
+    }
+
+    .sponsor-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .sponsor-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 0.2rem;
+    }
+    body.theme-dark .sponsor-name { color: #f9fafb; }
+    .sponsor-website { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* Expanded content */
+    .sponsor-expanded {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease;
+    }
+    .sponsor-card.active .sponsor-expanded { max-height: 400px; opacity: 1; }
+
+    .sponsor-divider {
+      height: 1px;
+      background: rgba(148,163,184,0.25);
+      margin: 1.2rem 0;
+    }
+    body.theme-dark .sponsor-divider { background: rgba(56,189,248,0.15); }
+
+    .sponsor-stats { display: flex; gap: 1.8rem; margin-bottom: 1rem; }
+    .sponsor-stat-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .sponsor-stat-value {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--card-accent, #111827);
+      letter-spacing: -0.02em;
+      font-family: "Playfair Display", serif;
+    }
+    .sponsor-stat-value.neutral { color: #111827; }
+    body.theme-dark .sponsor-stat-value.neutral { color: #f9fafb; }
+
+    .sponsor-details-box {
+      background: var(--bg-soft);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+    }
+    body.theme-dark .sponsor-details-box {
+      background: rgba(15,23,42,0.6);
+      border: 1px solid rgba(56,189,248,0.1);
+    }
+    .sponsor-details-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .sponsor-details-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Hint */
+    .click-hint {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+    }
+
+    /* Become a sponsor */
+    .become-section {
+      padding: 3.5rem 5vw;
+      background: #f7f4ef;
+      border-top: 1px solid rgba(148,163,184,0.25);
+    }
+    body.theme-dark .become-section {
+      background: transparent;
+      border-top-color: rgba(56,189,248,0.1);
+    }
+    .become-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .become-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    .tier-breakdown { display: flex; flex-direction: column; gap: 0.75rem; }
+    .tier-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 1.1rem;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(148,163,184,0.2);
+      box-shadow: 0 4px 14px rgba(15,23,42,0.05);
+      transition: background-color 0.35s ease, border-color 0.35s ease;
+    }
+    body.theme-dark .tier-row {
+      background: radial-gradient(circle at top left, #111827, #020617 70%);
+      border-color: #1f2937;
+    }
+    .tier-row-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .tier-row-name { font-size: 0.9rem; font-weight: 600; color: #111827; flex: 1; }
+    body.theme-dark .tier-row-name { color: #f9fafb; }
+    .tier-row-amount { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+    .become-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 1.8rem; }
+
+    /* Robot arm canvas */
+    #arm-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* Arm status pill */
+    .arm-status {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #111827;
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      z-index: 200;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    body.theme-dark .arm-status {
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(56,189,248,0.25);
+    }
+    .arm-status.visible { opacity: 1; }
+    .arm-status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: blink 1.2s infinite;
+    }
+    .arm-status-dot.moving    { background: #f59e0b; }
+    .arm-status-dot.open      { background: #38bdf8; }
+    .arm-status-dot.retracting{ background: #6b7280; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+    /* Active nav link */
+    .nav-links a.active-page { color: #111827; font-weight: 600; }
+    .nav-links a.active-page::after { width: 100%; }
+    body.theme-dark .nav-links a.active-page { color: #38bdf8; }
+    body.theme-dark .nav-links a.active-page::after { background: #38bdf8; }
+
+    @media (max-width: 600px) { .sponsors-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- ===== NAVBAR (exact copy from index.html) ===== -->
+  <header class="navbar">
+    <div class="nav-logo">
+      <div class="logo-mark">FRC</div>
+      <div class="logo-text">
+        <span>West Campus</span>
+        <span>Robotics Team 11274</span>
+      </div>
+    </div>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="nav-right">
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#mission">Mission</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#officers">Officers</a>
+        <a href="index.html#support">Support</a>
+        <a href="sponsors.html" class="active-page">Sponsors</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light / dark mode">
+        <span class="theme-icon theme-icon-sun"><i class="fa-solid fa-sun"></i></span>
+        <span class="theme-icon theme-icon-moon"><i class="fa-solid fa-moon"></i></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="sponsors-hero">
+      <div class="sponsors-hero-inner reveal" data-reveal="up">
+        <p class="eyebrow">Team 11274 · Sponsors</p>
+        <h1 class="hero-title">The people who make it possible.</h1>
+        <p class="hero-subtitle">
+          West Campus FRC runs on the generosity of our sponsors. Every contribution goes directly
+          toward parts, registration, travel, and building a stronger team.
+        </p>
+        <div class="hero-actions">
+          <a href="#become" class="btn primary">Become a sponsor</a>
+          <a href="Red and White Corporate Manager Services Contract A4.pdf" download class="btn ghost">Download packet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TIER FILTER TABS ===== -->
+    <div class="tier-tabs">
+      <button class="tier-tab active" data-tier="all">All Sponsors</button>
+      <button class="tier-tab" data-tier="Platinum">Platinum</button>
+      <button class="tier-tab" data-tier="Gold">Gold</button>
+      <button class="tier-tab" data-tier="Silver">Silver</button>
+      <button class="tier-tab" data-tier="Bronze">Bronze</button>
+    </div>
+
+    <!-- ===== ROBOT ARM CANVAS ===== -->
+    <canvas id="arm-canvas"></canvas>
+
+    <!-- ===== ARM STATUS BADGE ===== -->
+    <div class="arm-status" id="arm-status">
+      <div class="arm-status-dot" id="arm-dot"></div>
+      <span id="arm-status-text">Arm ready</span>
+    </div>
+
+    <!-- ===== SPONSORS GRID ===== -->
+    <section class="sponsors-section">
+      <div class="section-header reveal" data-reveal="up">
+        <p class="eyebrow">Our Partners</p>
+        <h2 class="section-title">Sponsors who believe in us.</h2>
+        <p class="section-description">
+          Click any card to deploy the retrieval arm and learn more about their contribution to the team.
+        </p>
+      </div>
+
+      <div class="click-hint">
+        <i class="fa-regular fa-hand-pointer"></i>
+        Click any card to see details
+      </div>
+
+      <div class="sponsors-grid" id="sponsors-grid">
+        <!-- injected by JS -->
+      </div>
+    </section>
+
+    <!-- ===== BECOME A SPONSOR ===== -->
+    <section class="become-section" id="become">
+      <div class="become-inner">
+        <div class="reveal" data-reveal="left">
+          <p class="eyebrow">Get Involved</p>
+          <h2 class="section-title">Become a sponsor.</h2>
+          <p class="section-description">
+            Your contribution helps us compete, learn, and grow as engineers and leaders.
+            Whether it's $500 or $50,000 — every dollar goes directly into the robot and the team.
+          </p>
+          <div class="become-actions">
+            <a href="mailto:wchsfrc@gmail.com" class="btn primary">Contact us</a>
+            <a href="Red and White Corporate Manager Services Contract A4.pdf" download class="btn ghost">Download sponsor packet</a>
+          </div>
+        </div>
+
+        <div class="tier-breakdown reveal" data-reveal="right">
+          <div class="tier-row">
+            <div class="tier-row-dot" style="background:#2858f7;"></div>
+            <span class="tier-row-name">Diamond</span>
+            <span class="tier-row-amount">$5000+</span>
+          </div>
+          <div class="tier-row">
+            <div class="tier-row-dot" style="background:#9b59b6;"></div>
+            <span class="tier-row-name">Platinum</span>
+            <span class="tier-row-amount">$2,500 - $4,999</span>
+          </div>
+          <div class="tier-row">
+            <div class="tier-row-dot" style="background:#d4a017;"></div>
+            <span class="tier-row-name">Gold</span>
+            <span class="tier-row-amount">$1,000 – $2,499</span>
+          </div>
+          <div class="tier-row">
+            <div class="tier-row-dot" style="background:#6b7280;"></div>
+            <span class="tier-row-name">Silver</span>
+            <span class="tier-row-amount">$500 – $999</span>
+          </div>
+          <div class="tier-row">
+            <div class="tier-row-dot" style="background:#b87333;"></div>
+            <span class="tier-row-name">Bronze</span>
+            <span class="tier-row-amount">$100 – $499</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER (exact copy from index.html) ===== -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div class="logo-mark">FRC</div>
+      <span>West Campus High School Robotics · Team 11274</span>
+    </div>
+    <div>© 2025 West Campus Robotics</div>
+  </footer>
+
+</div>
+
+<script>
+  // ── SPONSOR DATA ──
+  // Replace these with your real sponsors!
+  const SPONSORS = [
+    {
+      id: 1, name: "NovaTech Industries", img: "kaib.png", tier: "Platinum",
+      accent: "#9b59b6", amount: "$50,000", since: "2021", website: "homedepot.com",
+      details: "Supporting AI research and innovation initiatives across our engineering programs, funding lab equipment and competition travel."
+    },
+    {
+      id: 2, name: "Orion Labs", img: "kaib.png", tier: "Platinum",
+      accent: "#9b59b6", amount: "$35,000", since: "2022", website: "acehardware.com",
+      details: "Dedicated to empowering student robotics teams with hardware grants and mentorship from professional engineers."
+    },
+    {
+      id: 3, name: "Synthex", img: "kaib.png", tier: "Gold",
+      accent: "#d4a017", amount: "$18,000", since: "2023", website: "lowes.com",
+      details: "Funding workshops on synthetic data and machine learning pipelines for our software subteam."
+    },
+    {
+      id: 4, name: "DataForge", img: "kaib.png", tier: "Gold",
+      accent: "#d4a017", amount: "$12,500", since: "2023", website: "blackstone.com",
+      details: "Providing cloud credits and data infrastructure for competition simulations and autonomous routine testing."
+    },
+    {
+      id: 5, name: "IronCore Mfg.", img: "kaib.png", tier: "Silver",
+      accent: "#6b7280", amount: "$8,000", since: "2024", website: "frc.org",
+      details: "Donating precision-machined parts and sponsoring hands-on manufacturing education for our mechanical subteam."
+    },
+    {
+      id: 6, name: "Volt Systems", img: "kaib.png", tier: "Silver",
+      accent: "#6b7280", amount: "$6,200", since: "2024", website: "voltsys.com",
+      details: "Providing electrical components, batteries, and power systems — keeping our robot powered through every match."
+    },
+    {
+      id: 7, name: "Crestwood Tools", img: "kaib.png", tier: "Bronze",
+      accent: "#b87333", amount: "$3,000", since: "2024", website: "crestwoodtools.com",
+      details: "Supplying hand tools and shop equipment for our build space, directly improving our fabrication capability."
+    },
+    {
+      id: 8, name: "Pacific Print Co.", img: "kaib.png", tier: "Bronze",
+      accent: "#b87333", amount: "$1,500", since: "2025", website: "pacificprint.co",
+      details: "Sponsoring all team apparel, banners, pit display materials, and printed outreach content."
+    }
+  ];
+
+  const TIER_ORDER = { Platinum: 0, Gold: 1, Silver: 2, Bronze: 3 };
+  const sorted = [...SPONSORS].sort((a, b) => TIER_ORDER[a.tier] - TIER_ORDER[b.tier]);
+
+  // ── ARM STATE ──
+  let activeId   = null;
+  let phase      = "idle";
+  let armX       = -300, armY  = window.innerHeight + 200;
+  let armTX      = -300, armTY = window.innerHeight + 200;
+  let armAccent  = "#111827";
+  let fingersOpen = false;
+
+  // ── BUILD CARDS ──
+  const grid = document.getElementById("sponsors-grid");
+
+  function buildCards(filterTier = "all") {
+    grid.innerHTML = "";
+    sorted
+      .filter(s => filterTier === "all" || s.tier === filterTier)
+      .forEach(s => {
+        const card = document.createElement("div");
+        card.className = "sponsor-card reveal";
+        card.dataset.reveal = "up";
+        card.id = `card-${s.id}`;
+        card.style.setProperty("--card-accent", s.accent);
+        card.innerHTML = `
+          <div class="sponsor-tier-badge"><div class="tier-dot"></div>${s.tier}</div>
+          <div class="sponsor-logo">
+            <img src="${s.img}" alt="${s.name} logo" />
+          </div>
+          <div class="sponsor-name">${s.name}</div>
+          <div class="sponsor-website">${s.website}</div>
+          <div class="sponsor-expanded">
+            <div class="sponsor-divider"></div>
+            <div class="sponsor-stats">
+              <div>
+                <div class="sponsor-stat-label">Donated</div>
+                <div class="sponsor-stat-value">${s.amount}</div>
+              </div>
+              <div>
+                <div class="sponsor-stat-label">Partner since</div>
+                <div class="sponsor-stat-value neutral">${s.since}</div>
+              </div>
+            </div>
+            <div class="sponsor-details-box">
+              <div class="sponsor-details-label">About this sponsorship</div>
+              <div class="sponsor-details-text">${s.details}</div>
+            </div>
+          </div>
+        `;
+        card.addEventListener("click", () => handleCardClick(s));
+        grid.appendChild(card);
+      });
+    attachReveal();
+  }
+
+  buildCards();
+
+  // ── TIER TABS ──
+  document.querySelectorAll(".tier-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      if (phase === "moving" || phase === "retracting") return;
+      document.querySelectorAll(".tier-tab").forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      resetArm();
+      buildCards(tab.dataset.tier);
+    });
+  });
+
+  function resetArm() {
+    activeId = null; phase = "idle"; fingersOpen = false;
+    armTX = -300; armTY = window.innerHeight + 200;
+    document.querySelectorAll(".sponsor-card").forEach(c => c.classList.remove("active"));
+    hideStatus();
+  }
+
+  // ── CARD CLICK ──
+  function handleCardClick(sponsor) {
+    if (phase === "moving" || phase === "retracting") return;
+    const card = document.getElementById(`card-${sponsor.id}`);
+    if (!card) return;
+
+    // Toggle off
+    if (activeId === sponsor.id) {
+      card.classList.remove("active");
+      resetArm();
+      return;
+    }
+
+    // Close previous
+    document.querySelectorAll(".sponsor-card").forEach(c => c.classList.remove("active"));
+    activeId = null;
+
+    const rect = card.getBoundingClientRect();
+    armAccent = sponsor.accent;
+    armTX = rect.left + rect.width / 2;
+    armTY = rect.top + rect.height / 3;
+    phase = "moving";
+    setStatus("moving", "Deploying arm");
+
+    setTimeout(() => {
+      card.classList.add("active");
+      activeId = sponsor.id;
+      phase = "open";
+      fingersOpen = true;
+      setStatus("open", "Card opened");
+
+      // Retract after a moment so the card is fully readable
+      setTimeout(() => {
+        phase = "retracting";
+        fingersOpen = false;
+        armTX = -300;
+        armTY = window.innerHeight + 200;
+        setStatus("retracting", "Retracting");
+
+        setTimeout(() => {
+          phase = "retracted";
+          hideStatus();
+        }, 1000);
+      }, 700);
+    }, 950);
+  }
+
+  // ── STATUS BADGE ──
+  const statusEl  = document.getElementById("arm-status");
+  const dotEl     = document.getElementById("arm-dot");
+  const statusTxt = document.getElementById("arm-status-text");
+  function setStatus(state, text) {
+    statusEl.classList.add("visible");
+    statusTxt.textContent = text;
+    dotEl.className = "arm-status-dot " + state;
+  }
+  function hideStatus() {
+    setTimeout(() => statusEl.classList.remove("visible"), 800);
+  }
+
+  // ── CANVAS ROBOT ARM ──
+  const canvas = document.getElementById("arm-canvas");
+  const ctx    = canvas.getContext("2d");
+
+  function resizeCanvas() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function isDark() { return document.body.classList.contains("theme-dark"); }
+
+  function rRect(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.arcTo(x + w, y, x + w, y + r, r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.arcTo(x + w, y + h, x + w - r, y + h, r);
+    ctx.lineTo(x + r, y + h);
+    ctx.arcTo(x, y + h, x, y + h - r, r);
+    ctx.lineTo(x, y + r);
+    ctx.arcTo(x, y, x + r, y, r);
+    ctx.closePath();
+  }
+
+  function drawArm() {
+    armX = lerp(armX, armTX, 0.1);
+    armY = lerp(armY, armTY, 0.1);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const visible = phase !== "idle" && phase !== "retracted";
+    if (!visible) { requestAnimationFrame(drawArm); return; }
+
+    const distToTarget = Math.hypot(armX - armTX, armY - armTY);
+    const opacity = phase === "retracting" ? Math.min(1, distToTarget / 180) : 1;
+
+    ctx.save();
+    ctx.globalAlpha = Math.max(0, opacity);
+
+    // In light mode use dark color so arm is visible on the warm cream background
+    const col   = isDark() ? armAccent : "#111827";
+    const fillC = isDark() ? "#020617" : "#f3f0eb";
+    const glow  = isDark() ? 10 : 3;
+
+    const baseX = -50;
+    const baseY = armY + 130;
+    const s1x = baseX + (armX - baseX) * 0.38;
+    const s1y = baseY - 45;
+    const s2x = baseX + (armX - baseX) * 0.73;
+    const s2y = armY + 22;
+    const hx  = armX - 14;
+    const hy  = armY - 6;
+
+    function seg(x1, y1, x2, y2, w) {
+      ctx.shadowColor = col; ctx.shadowBlur = glow;
+      ctx.strokeStyle = col; ctx.lineWidth = w; ctx.lineCap = "round";
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+      ctx.shadowBlur = 0;
+    }
+
+    function joint(x, y, r) {
+      ctx.shadowColor = col; ctx.shadowBlur = glow;
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fillStyle = fillC; ctx.fill();
+      ctx.strokeStyle = col; ctx.lineWidth = 1.5; ctx.stroke();
+      ctx.shadowBlur = 0;
+    }
+
+    seg(baseX, baseY, s1x, s1y, 5);
+    joint(s1x, s1y, 5.5);
+    seg(s1x, s1y, s2x, s2y, 4);
+    joint(s2x, s2y, 4.5);
+    seg(s2x, s2y, hx, hy, 3);
+
+    // Hand base
+    ctx.shadowColor = col; ctx.shadowBlur = glow;
+    rRect(hx - 5, hy - 6, 26, 14, 3);
+    ctx.fillStyle = fillC; ctx.fill();
+    ctx.strokeStyle = col; ctx.lineWidth = 1.5; ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // Fingers
+    for (let i = 0; i < 4; i++) {
+      const fx = hx + i * 6.5;
+      const fy = hy - 6;
+      const angle = fingersOpen ? ((-26 + i * 11) * Math.PI / 180) : 0;
+      ctx.save();
+      ctx.translate(fx + 2.5, fy);
+      ctx.rotate(angle);
+      ctx.shadowColor = col; ctx.shadowBlur = glow;
+      ctx.strokeStyle = col; ctx.lineWidth = 1.5;
+      ctx.fillStyle = fillC;
+      rRect(-2.5, -12, 5.5, 12, 2); ctx.fill(); ctx.stroke();
+      ctx.save();
+      ctx.translate(0, -12);
+      ctx.rotate(fingersOpen ? (-14 * Math.PI / 180) : 0);
+      rRect(-2, -10, 4.5, 10, 2); ctx.fill(); ctx.stroke();
+      if (fingersOpen) {
+        ctx.beginPath(); ctx.arc(1, -11, 2, 0, Math.PI * 2);
+        ctx.fillStyle = col; ctx.shadowBlur = glow * 1.5; ctx.fill();
+      }
+      ctx.restore();
+      ctx.restore();
+    }
+
+    joint(hx + 7, hy, 3.5);
+    ctx.restore();
+    requestAnimationFrame(drawArm);
+  }
+
+  requestAnimationFrame(drawArm);
+
+  // ── THEME TOGGLE ──
+  const themeBtn   = document.getElementById("theme-toggle");
+  const savedTheme = localStorage.getItem("wc-theme");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    document.body.classList.add("theme-dark");
+  }
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("theme-dark");
+      localStorage.setItem("wc-theme", document.body.classList.contains("theme-dark") ? "dark" : "light");
+    });
+  }
+
+  // ── MOBILE NAV ──
+  const navToggle = document.getElementById("nav-toggle");
+  const navLinks  = document.getElementById("nav-links");
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
+    navLinks.querySelectorAll("a").forEach(l => l.addEventListener("click", () => navLinks.classList.remove("open")));
+  }
+
+  // ── SCROLL REVEAL ──
+  function attachReveal() {
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
+      }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll(".reveal:not(.visible)").forEach(el => obs.observe(el));
+  }
+  attachReveal();
+</script>
+</body>
+</html>
