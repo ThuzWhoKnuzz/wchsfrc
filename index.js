@@ -43,7 +43,7 @@ const officersArray = [
   ['kaib', 'Kai Bzoskie', 'Community Outreach Coordinator',
     'I organize events that connect our team with schools, nonprofits, sponsors, and local organizations. I plan STEM workshops, team demonstrations, volunteer activities, and fundraising initiatives that promote robotics education. I communicate with community partners to build long-term relationships and secure sponsorship opportunities. I coordinate volunteers and logistics to ensure events run smoothly and professionally. Through outreach, I help expand our team’s impact by inspiring students and strengthening public support for STEM programs.',
     'https://via.placeholder.com/400x400'],
-  ['owenk', 'Owen Kay', 'Treasurer',
+  ['oliverh', 'Oliver Hsu', 'Treasurer',
     'I manage the team’s budget by tracking expenses, organizing reimbursements, and monitoring funding for parts, travel, and competition fees. I maintain financial records to ensure transparency and accountability. I work with sponsors, fundraising teams, and school administrators to manage donations and purchasing approvals. I assist in setting financial priorities based on team needs throughout the season. Through responsible money management, I help ensure the team remains financially stable and competition-ready.',
     'https://via.placeholder.com/400x400'],
   ['thachn', 'Thach Ngu', 'Web Developer',
@@ -52,6 +52,9 @@ const officersArray = [
     ['tims', 'Timmothy Shen', 'Vision Team Lead',
     'I develop and implement computer vision algorithms to enable the robot to detect and track objects on the field using cameras and sensors. I work closely with programmers to integrate vision processing into autonomous routines for tasks like target alignment and object recognition. I research and test different vision libraries and techniques to improve accuracy and speed. I also mentor team members interested in vision programming by teaching concepts like image processing and machine learning. Through innovation and collaboration, I help enhance the robot’s capabilities for competition.',
     'IMG_5117.jpg'],
+    ['owenk', 'Owen Kay', 'Vice President',
+    'As Vice President of West Campus FRC, I facilitate club meetings and build days, coordinate with competition and school faculty, and delegate important tasks to the officer team. Along with our club advisor, we have managed to fund, recruit, and train a dedicated team of students who are excited to make their mark on West Campus history.',
+    '1000006859.jpg']
 ];
 
 
