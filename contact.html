@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · West Campus FRC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/eb28b34f1e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <div class="logo-mark">FRC</div>
+        <div class="logo-text"><b>West Campus</b><small>Robotics Team 11274</small></div>
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="mission.html">Mission</a>
+          <a href="projects.html">Projects</a>
+          <a href="officers.html">Officers</a>
+          <a href="support.html">Support</a>
+          <a href="sponsors.html">Sponsors</a>
+          <a href="contact.html" class="nav-cta active">Contact</a>
+        </nav>
+        <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container reveal">
+        <p class="eyebrow">Contact</p>
+        <h1 class="display" style="font-size:clamp(3rem,8vw,6.5rem)">Get in touch with the team.</h1>
+        <p class="lead">Have questions about joining, mentoring, or supporting West Campus FRC? Send us a message and we'll get back to you as soon as we're off the build schedule.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Reach us</p>
+          <h2 class="title">Let's talk robots.</h2>
+          <div class="contact-list">
+            <div class="contact-item"><i class="fa-solid fa-envelope"></i><div><small>Email</small><a href="mailto:wchsfrc@gmail.com">wchsfrc@gmail.com</a></div></div>
+            <div class="contact-item"><i class="fa-solid fa-location-dot"></i><div><small>Location</small><div>West Campus High School · Sacramento, CA</div></div></div>
+          </div>
+          <div class="ph r-16x9" style="margin-top:2rem">Map / school photo placeholder</div>
+        </div>
+
+        <form class="form reveal" id="contact-form" action="https://formsubmit.co/wchsfrc@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from West Campus FRC site">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_autoresponse" value="Thanks for contacting West Campus Robotics! We'll reply soon.">
+          <input type="hidden" name="_next" value="">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div><label for="name">Full name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
+          <div><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@example.com" required></div>
+          <div><label for="phone">Phone number</label><input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" pattern="[\d\s\-\+\(\)]{7,}" inputmode="tel" required></div>
+          <div><label for="organization">Organization</label><input type="text" id="organization" name="organization" placeholder="School, company, or team name" required></div>
+          <div><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Tell us how you'd like to get involved." required></textarea></div>
+          <button type="submit" class="btn primary">Send message</button>
+          <p class="form-msg" id="form-msg"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="index.html"><div class="logo-mark">FRC</div><div class="logo-text"><b>West Campus</b><small>Robotics Team 11274</small></div></a>
+          <p>Empowering the next generation of engineers.</p>
+        </div>
+        <div><h4>Explore</h4><ul><li><a href="mission.html">Mission</a></li><li><a href="projects.html">Projects</a></li><li><a href="officers.html">Officers</a></li><li><a href="support.html">Support</a></li><li><a href="sponsors.html">Sponsors</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li><a href="mailto:wchsfrc@gmail.com">wchsfrc@gmail.com</a></li><li>West Campus High School</li><li>Sacramento, CA</li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 West Campus Robotics · Team 11274</span><span>Never has there been a faster robot.</span></div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
